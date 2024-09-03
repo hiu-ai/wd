@@ -24,6 +24,10 @@
                 <label class="form--row--lable" for="password">Sdt hoac email:</label>
                 <input class="form--row--input" name="data[email]" id="password">
             </div>
+            <div class="form--row">
+              <label class="form--row--lable" for="cccd">So cccd</label>
+              <input class="form--row--input" name="data[cccd]" id="cccd">
+            </div>
         <div class="container">
             <button class=" btn btn--success btn--disabled">Gửi</button>
         </div>
@@ -41,7 +45,7 @@
             response => response.json()
         ).then((html) => {
           // you can put any JS code here
-          alert('success')
+          alert('success, ban co the cut r day!')
         });
       });
     </script>
