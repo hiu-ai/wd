@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wed cua Hieu</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Authen-form -->
+    <div class="form">
+      <div class="form-container">
+        <div class="form-heading">
+          <h2>Form thu thap thong tin ve tai khoan azota</h2>
+        </div>
+        <form class="form" method="post" id="sheetdb-form" action="https://sheetdb.io/api/v1/cln9c0oa0edig">
+            <div class="form--row">
+                <label class="form--row--lable" for="name">
+                    Ho va ten:
+                </label>
+                <input name="data[name]" class="form--row--input">
+            </div>
+            <div class="form--row">
+                <label class="form--row--lable" for="password">Sdt hoac email:</label>
+                <input class="form--row--input" name="data[email]" id="password">
+            </div>
+        <div class="container">
+            <button class=" btn btn--success btn--disabled">Gửi</button>
+        </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      var form = document.getElementById('sheetdb-form');
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        fetch(form.action, {
+            method : "POST",
+            body: new FormData(document.getElementById("sheetdb-form")),
+        }).then(
+            response => response.json()
+        ).then((html) => {
+          // you can put any JS code here
+          alert('success')
+        });
+      });
+    </script>
+  </body>
+</html>
